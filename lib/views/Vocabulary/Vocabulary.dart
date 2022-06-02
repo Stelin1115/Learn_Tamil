@@ -33,7 +33,7 @@ class _VocabularyPageState extends State<VocabularyPage> {
           'Vocabulary',
           style: TextStyle(
               color: kPrimaryWhiteColor,
-              fontSize: 21,
+              fontSize: 20,
               fontFamily: 'Poppins',
               fontWeight: FontWeight.w300),
         ),
@@ -69,7 +69,7 @@ class _VocabularyPageState extends State<VocabularyPage> {
             ),
             SingleChildScrollView(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 36),
+                padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: Column(
                   children: [
                     SizedBox(
@@ -84,20 +84,20 @@ class _VocabularyPageState extends State<VocabularyPage> {
                                 "level 01",
                                 style: TextStyle(
                                     fontFamily: 'Poppins',
-                                    fontSize: 21,
+                                    fontSize: 20,
                                     color: kPrimaryWhiteColor,
                                     fontWeight: FontWeight.w500),
                               ),
                               Text(' - ',
                                   style: TextStyle(
                                       fontFamily: 'Poppins',
-                                      fontSize: 21,
+                                      fontSize: 20,
                                       color: kPrimaryWhiteColor,
                                       fontWeight: FontWeight.w500)),
                               Text("40% complete",
                                   style: TextStyle(
                                       fontFamily: 'Poppins',
-                                      fontSize: 21,
+                                      fontSize: 20,
                                       color: kPrimaryWhiteColor,
                                       fontWeight: FontWeight.w500))
                             ],

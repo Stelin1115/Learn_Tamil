@@ -52,7 +52,7 @@ class _LearnState extends State<Learn> {
                       'name',
                       style: TextStyle(
                           fontWeight: FontWeight.w300,
-                          fontSize: 21,
+                          fontSize: 20,
                           color: primaryColor,
                           fontFamily: 'Poppins'),
                     ),

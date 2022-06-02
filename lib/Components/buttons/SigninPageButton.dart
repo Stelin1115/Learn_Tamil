@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:learn_tamil/Components/constrants.dart';
 
-class LoginPageButton extends StatelessWidget {
-  const LoginPageButton(
+class SigninPageButton extends StatelessWidget {
+  const SigninPageButton(
     {Key? key, 
     required this.text, 
     required this.function})

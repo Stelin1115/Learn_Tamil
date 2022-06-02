@@ -28,7 +28,7 @@ class _SignupPageState extends State<SignupPage> {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(
-            horizontal: 36.0
+            horizontal: 30.0
           ),
           child: Form(
             child: Column(
@@ -94,7 +94,7 @@ class _SignupPageState extends State<SignupPage> {
                 SizedBox(height: 8,),
                 _confirmpassword(),
                 SizedBox(height: screenHeight*(1/50),),
-                LoginPageButton(
+                SigninPageButton(
                   text: "Sign up", 
                   function: () {
                     Navigator.of(context).pushReplacement(MaterialPageRoute(
@@ -135,7 +135,8 @@ class _SignupPageState extends State<SignupPage> {
                       ),
                     ),
                   ),
-                )
+                ),
+                SizedBox(height: 10,)
               ],
             ),
           ),

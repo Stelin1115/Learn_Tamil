@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, curly_braces_in_flow_control_structures
 
 import 'package:flutter/material.dart';
+import 'package:learn_tamil/Auth/ResetPassword/ResetPassword.dart';
 import 'package:learn_tamil/Components/buttons/SigninPageButton.dart';
 import 'package:learn_tamil/Components/constrants.dart';
 import 'package:learn_tamil/Auth/Signup/Signup.dart';
@@ -27,7 +28,7 @@ class _SigninPageState extends State<SigninPage> {
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(
-            horizontal: 36.0
+            horizontal: 30.0
           ),
           child: Form(
             child: Column(
@@ -91,18 +92,23 @@ class _SigninPageState extends State<SigninPage> {
                 SizedBox(height: 10,),
                 Align(
                   alignment: Alignment.bottomRight,
-                  child: Text(
-                    "Forget password?",
-                    style: TextStyle(
-                      color: primaryColor,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w500,
-                      fontSize: 15,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (BuildContext context) => ResetPasswordPage()));
+                    },
+                    child: Text(
+                      "Forget password?",
+                      style: TextStyle(
+                        color: primaryColor,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.w500,
+                        fontSize: 15,
+                      ),
                     ),
                   ),
                 ),
                 SizedBox(height: screenHeight*(1/50),),
-                LoginPageButton(
+                SigninPageButton(
                   text: "Sign in", 
                   function: () {
                     Navigator.of(context).pushReplacement(MaterialPageRoute(
@@ -143,7 +149,8 @@ class _SigninPageState extends State<SigninPage> {
                       ),
                     ),
                   ),
-                )
+                ),
+                SizedBox(height: 10,)
               ],
             ),
           ),

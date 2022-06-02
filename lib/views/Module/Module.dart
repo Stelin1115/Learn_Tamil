@@ -43,7 +43,7 @@ class _ModulePageState extends State<ModulePage> {
                       "Modules",
                       style: TextStyle(
                           fontFamily: 'Poppins',
-                          fontSize: 21,
+                          fontSize: 20,
                           color: primaryColor,
                           fontWeight: FontWeight.w300),
                     ),

@@ -25,7 +25,7 @@ class _AnimalsPageState extends State<AnimalsPage> {
           'Animals',
           style: TextStyle(
             color: kPrimaryWhiteColor,
-            fontSize: 21,
+            fontSize: 20,
             fontWeight: FontWeight.w300,
             fontFamily: 'Poppins'
           ),
@@ -66,7 +66,7 @@ class _AnimalsPageState extends State<AnimalsPage> {
             ),
             SingleChildScrollView(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 36),
+                padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: Column(
                   children: <Widget>[
                     Align(
@@ -77,7 +77,7 @@ class _AnimalsPageState extends State<AnimalsPage> {
                           color: kPrimaryWhiteColor,
                           fontFamily: 'Poppins',
                           fontWeight: FontWeight.w300,
-                          fontSize: 21
+                          fontSize: 20
                         ),
                       ),
                     ),

@@ -20,6 +20,8 @@ class VocabularyButton extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(bottom: 10),
         child: SizedBox(
+          // height: 120,
+          // width:120,
           height: screenHeight * 1/5.0,
           width: screenWidth* 1/2.7,
           child: ElevatedButton(

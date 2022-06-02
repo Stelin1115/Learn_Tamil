@@ -36,7 +36,7 @@ class _FoodPageState extends State<FoodPage> {
           'Food',
           style: TextStyle(
               color: kPrimaryWhiteColor,
-              fontSize: 21,
+              fontSize: 20,
               fontFamily: 'Poppins',
               fontWeight: FontWeight.w300),
         ),
@@ -75,7 +75,7 @@ class _FoodPageState extends State<FoodPage> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 36),
+              padding: const EdgeInsets.symmetric(horizontal: 30),
               child: SingleChildScrollView(
                 child: Column(children: [
                   Row(
@@ -86,7 +86,7 @@ class _FoodPageState extends State<FoodPage> {
                             color: kPrimaryWhiteColor,
                             fontFamily: 'Poppins',
                             fontWeight: FontWeight.w300,
-                            fontSize: 21),
+                            fontSize: 20),
                       ),
                       Text(
                         "level 01",
@@ -94,7 +94,7 @@ class _FoodPageState extends State<FoodPage> {
                             color: kPrimaryWhiteColor,
                             fontFamily: 'Poppins',
                             fontWeight: FontWeight.w300,
-                            fontSize: 21),
+                            fontSize: 20),
                       ),
                     ],
                   ),
@@ -130,7 +130,7 @@ class _FoodPageState extends State<FoodPage> {
                                                     'name',
                                                     style: TextStyle(
                                                         fontWeight: FontWeight.w300,
-                                                        fontSize: 21,
+                                                        fontSize: 20,
                                                         color: primaryColor,
                                                         fontFamily: 'Poppins'),
                                                   ),

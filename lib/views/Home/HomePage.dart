@@ -17,8 +17,7 @@ class _HomePageState extends State<HomePage> {
 
   List unfinishedmodule = [
     {"unfinishedmodule": "Vocabulary - Beginner"},
-    {"unfinishedmodule": "Vocabulary - Beginner"},
-    {"unfinishedmodule": "Vocabulary - Beginner"},
+    
   ];
 
   @override
@@ -33,7 +32,7 @@ class _HomePageState extends State<HomePage> {
           'Learn Tamil',
           style: TextStyle(
               color: primaryColor,
-              fontSize: 21,
+              fontSize: 20,
               fontFamily: 'Poppins',
               fontWeight: FontWeight.w300),
         ),
@@ -71,13 +70,13 @@ class _HomePageState extends State<HomePage> {
                     child: Column(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(left: 36),
+                          padding: const EdgeInsets.only(left: 30),
                           child: Align(
                             alignment: Alignment.centerLeft,
                             child: Text(
                               'Welcome! John Doe',
                               style: TextStyle(
-                                  fontSize: 21,
+                                  fontSize: 19,
                                   fontFamily: 'Poppins',
                                   fontWeight: FontWeight.normal),
                             ),
@@ -91,7 +90,7 @@ class _HomePageState extends State<HomePage> {
                           children: [
                             Padding(
                               padding:
-                                  const EdgeInsets.symmetric(horizontal: 36),
+                                  const EdgeInsets.symmetric(horizontal: 30),
                               child: Container(
                                 // height: 160,
                                 width: screenWidth,
@@ -109,7 +108,7 @@ class _HomePageState extends State<HomePage> {
                                         child: Text(
                                           'Learning Progress',
                                           style: TextStyle(
-                                              fontSize: 17,
+                                              fontSize: 16,
                                               fontFamily: 'Poppins',
                                               fontWeight: FontWeight.w600,
                                               color: kPrimaryRedColor),
@@ -119,7 +118,8 @@ class _HomePageState extends State<HomePage> {
                                     SizedBox(
                                       width: screenWidth,
                                       child: Row(
-                                        // crossAxisAlignment: CrossAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
                                           Padding(
                                             padding:
@@ -132,7 +132,8 @@ class _HomePageState extends State<HomePage> {
                                                         .spaceEvenly,
                                                 children: [
                                                   SizedBox(
-                                                    width: 170,
+                                                    width:
+                                                        screenWidth * 1 / 2.5,
                                                     child: Row(
                                                       mainAxisAlignment:
                                                           MainAxisAlignment
@@ -141,7 +142,7 @@ class _HomePageState extends State<HomePage> {
                                                         Text(
                                                           'Vocabulary:',
                                                           style: TextStyle(
-                                                              fontSize: 16,
+                                                              fontSize: 15,
                                                               fontFamily:
                                                                   'Poppins',
                                                               fontWeight:
@@ -151,7 +152,7 @@ class _HomePageState extends State<HomePage> {
                                                         Text(
                                                           '60%',
                                                           style: TextStyle(
-                                                              fontSize: 16,
+                                                              fontSize: 15,
                                                               fontFamily:
                                                                   'Poppins',
                                                               fontWeight:
@@ -162,7 +163,8 @@ class _HomePageState extends State<HomePage> {
                                                     ),
                                                   ),
                                                   SizedBox(
-                                                    width: 170,
+                                                    width:
+                                                        screenWidth * 1 / 2.5,
                                                     child: Row(
                                                       mainAxisAlignment:
                                                           MainAxisAlignment
@@ -171,7 +173,7 @@ class _HomePageState extends State<HomePage> {
                                                         Text(
                                                           'Grammer:',
                                                           style: TextStyle(
-                                                              fontSize: 16,
+                                                              fontSize: 15,
                                                               fontFamily:
                                                                   'Poppins',
                                                               fontWeight:
@@ -181,7 +183,7 @@ class _HomePageState extends State<HomePage> {
                                                         Text(
                                                           '50%',
                                                           style: TextStyle(
-                                                              fontSize: 16,
+                                                              fontSize: 15,
                                                               fontFamily:
                                                                   'Poppins',
                                                               fontWeight:
@@ -192,7 +194,8 @@ class _HomePageState extends State<HomePage> {
                                                     ),
                                                   ),
                                                   SizedBox(
-                                                    width: 170,
+                                                    width:
+                                                        screenWidth * 1 / 2.5,
                                                     child: Row(
                                                       mainAxisAlignment:
                                                           MainAxisAlignment
@@ -201,7 +204,7 @@ class _HomePageState extends State<HomePage> {
                                                         Text(
                                                           'Quiz:',
                                                           style: TextStyle(
-                                                              fontSize: 16,
+                                                              fontSize: 15,
                                                               fontFamily:
                                                                   'Poppins',
                                                               fontWeight:
@@ -211,7 +214,7 @@ class _HomePageState extends State<HomePage> {
                                                         Text(
                                                           '40%',
                                                           style: TextStyle(
-                                                              fontSize: 16,
+                                                              fontSize: 15,
                                                               fontFamily:
                                                                   'Poppins',
                                                               fontWeight:
@@ -225,23 +228,28 @@ class _HomePageState extends State<HomePage> {
                                               ),
                                             ),
                                           ),
-                                          SizedBox(width: 40),
-                                          CircularPercentIndicator(
-                                            radius: 30.0,
-                                            lineWidth: 5.0,
-                                            animation: true,
-                                            percent: 80 / 100,
-                                            center: Text(
-                                              80.toString() + "%",
-                                              style: TextStyle(
-                                                  fontSize: 15.0,
-                                                  fontWeight: FontWeight.w800,
-                                                  color: kPrimaryRedColor),
+                                          // SizedBox(width: 40),
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                                right: 10),
+                                            child: CircularPercentIndicator(
+                                              radius: 30.0,
+                                              lineWidth: 5.0,
+                                              animation: true,
+                                              percent: 80 / 100,
+                                              center: Text(
+                                                80.toString() + "%",
+                                                style: TextStyle(
+                                                    fontSize: 15.0,
+                                                    fontWeight: FontWeight.w800,
+                                                    color: kPrimaryRedColor),
+                                              ),
+                                              backgroundColor:
+                                                  kPrimaryWhiteColor,
+                                              circularStrokeCap:
+                                                  CircularStrokeCap.round,
+                                              progressColor: kPrimaryRedColor,
                                             ),
-                                            backgroundColor: kPrimaryWhiteColor,
-                                            circularStrokeCap:
-                                                CircularStrokeCap.round,
-                                            progressColor: kPrimaryRedColor,
                                           )
                                         ],
                                       ),
@@ -265,7 +273,7 @@ class _HomePageState extends State<HomePage> {
                           children: [
                             Padding(
                               padding:
-                                  const EdgeInsets.symmetric(horizontal: 36),
+                                  const EdgeInsets.symmetric(horizontal: 30),
                               child: Container(
                                 height: 150,
                                 width: screenWidth,
@@ -288,39 +296,35 @@ class _HomePageState extends State<HomePage> {
                                         padding:
                                             const EdgeInsets.only(left: 15),
                                         child: SizedBox(
-                                          height: 50,
-                                          child: Column(
-                                                  children: [
-                                                    Align(
-                                                      alignment: Alignment
-                                                          .centerLeft,
-                                                      child: Text(
-                                                        'Vocabulary',
-                                                        style: TextStyle(
-                                                          fontSize: 14,
-                                                          fontFamily:
-                                                              'Poppins',
-                                                          fontWeight:
-                                                              FontWeight.w700,
-                                                        ),
-                                                      ),
+                                            height: 50,
+                                            child: Column(
+                                              children: [
+                                                Align(
+                                                  alignment:
+                                                      Alignment.centerLeft,
+                                                  child: Text(
+                                                    'Vocabulary',
+                                                    style: TextStyle(
+                                                      fontSize: 14,
+                                                      fontFamily: 'Poppins',
+                                                      fontWeight:
+                                                          FontWeight.w700,
                                                     ),
-                                                    Align(
-                                                      alignment: Alignment
-                                                          .centerLeft,
-                                                      child: Text(
-                                                        'beginner level',
-                                                        style: TextStyle(
-                                                          fontSize: 14,
-                                                          fontFamily:
-                                                              'Poppins',
-                                                        ),
-                                                      ),
-                                                    )
-                                                  ],
+                                                  ),
+                                                ),
+                                                Align(
+                                                  alignment:
+                                                      Alignment.centerLeft,
+                                                  child: Text(
+                                                    'beginner level',
+                                                    style: TextStyle(
+                                                      fontSize: 14,
+                                                      fontFamily: 'Poppins',
+                                                    ),
+                                                  ),
                                                 )
-                                              
-                                        ),
+                                              ],
+                                            )),
                                       ),
                                       Container(
                                         margin:
@@ -360,9 +364,9 @@ class _HomePageState extends State<HomePage> {
                           children: [
                             Padding(
                               padding:
-                                  const EdgeInsets.symmetric(horizontal: 36),
+                                  const EdgeInsets.symmetric(horizontal: 30),
                               child: Container(
-                                // height: 170,
+                                height: 99,
                                 width: screenWidth,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20),
@@ -392,7 +396,7 @@ class _HomePageState extends State<HomePage> {
                                           padding: const EdgeInsets.symmetric(
                                               vertical: 4),
                                           child: SizedBox(
-                                            height: 100,
+                                            height: 30,
                                             child: ListView.builder(
                                                 itemCount:
                                                     unfinishedmodule.length,
@@ -451,7 +455,8 @@ class _HomePageState extends State<HomePage> {
                                       'assets/images/unfinishedmodulecard.png'),
                                 ))
                           ],
-                        )
+                        ),
+                        // SizedBox(height: 20,)
                       ],
                     )),
               ),
@@ -464,7 +469,7 @@ class _HomePageState extends State<HomePage> {
 
   _search() {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 36),
+      padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Container(
         height: 40,
         child: TextFormField(
