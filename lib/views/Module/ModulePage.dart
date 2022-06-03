@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors, curly_braces_in_flow_control_structures
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:learn_tamil/Auth/Signin/Signin.dart';
+import 'package:learn_tamil/Components/Widgets/PageTransition/ScaleRoutePage.dart';
 import 'package:learn_tamil/Components/buttons/ModuleButton.dart';
 import 'package:learn_tamil/Components/constrants.dart';
 import 'package:learn_tamil/views/Vocabulary/Vocabulary.dart';
@@ -66,12 +68,11 @@ class _ModulePageState extends State<ModulePage> {
                           backcolor: kPrimaryRedColor,
                           press: () {
                             Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => VocabularyPage(),
-                              ),
-                            );
-                          }, bordercolor: kPrimaryRedColor,
+                                context,
+                                ScaleRoute(
+                                    page: VocabularyPage()));
+                          },
+                          bordercolor: kPrimaryRedColor,
                         ),
                         ModuleButtons(
                           text: 'Grammer',
@@ -79,12 +80,11 @@ class _ModulePageState extends State<ModulePage> {
                           backcolor: kPrimaryDarkColor,
                           press: () {
                             Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => VocabularyPage(),
-                              ),
-                            );
-                          }, bordercolor: kPrimaryDarkColor,
+                                context,
+                                ScaleRoute(
+                                    page: VocabularyPage()));
+                          },
+                          bordercolor: kPrimaryDarkColor,
                         )
                       ],
                     ),
@@ -97,12 +97,11 @@ class _ModulePageState extends State<ModulePage> {
                           backcolor: kPrimaryBlueColor,
                           press: () {
                             Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => VocabularyPage(),
-                              ),
-                            );
-                          }, bordercolor: kPrimaryBlueColor,
+                                context,
+                                ScaleRoute(
+                                    page: VocabularyPage()));
+                          },
+                          bordercolor: kPrimaryBlueColor,
                         ),
                         ModuleButtons(
                           text: 'Quiz',
@@ -110,16 +109,14 @@ class _ModulePageState extends State<ModulePage> {
                           backcolor: kPrimaryWhiteColor,
                           press: () {
                             Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => VocabularyPage(),
-                              ),
-                            );
-                          }, bordercolor: kPrimaryRedColor,
+                                context,
+                                ScaleRoute(
+                                    page: VocabularyPage()));
+                          },
+                          bordercolor: kPrimaryRedColor,
                         )
                       ],
                     ),
-                    
                   ],
                 ),
               ),

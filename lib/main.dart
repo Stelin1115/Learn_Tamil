@@ -5,7 +5,8 @@ import 'package:learn_tamil/Auth/Signup/Signup.dart';
 import 'package:learn_tamil/views/Account/AccountPage.dart';
 import 'package:learn_tamil/views/Home/HomePage.dart';
 import 'package:learn_tamil/views/Home/HomeScreen.dart';
-import 'package:learn_tamil/views/Module/Module.dart';
+import 'package:learn_tamil/views/Module/ModulePage.dart';
+import 'package:learn_tamil/views/Setting/SettingPage.dart';
 import 'package:learn_tamil/views/SplashPage/SplashPage.dart';
 import 'package:learn_tamil/views/Vocabulary/Animals/Animals.dart';
 import 'package:learn_tamil/views/Vocabulary/Food/Food.dart';
@@ -44,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ModulePage(),
+      body: SplashPage(),
     );
   }
 }

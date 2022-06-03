@@ -2,11 +2,13 @@
 
 import 'package:flutter/material.dart';
 import 'package:learn_tamil/Auth/ResetPassword/ResetPassword.dart';
+import 'package:learn_tamil/Components/Widgets/PageTransition/ScaleRoutePage.dart';
+import 'package:learn_tamil/Components/Widgets/PageTransition/SlideRightRoutePage.dart';
 import 'package:learn_tamil/Components/buttons/SigninPageButton.dart';
 import 'package:learn_tamil/Components/constrants.dart';
 import 'package:learn_tamil/Auth/Signup/Signup.dart';
 import 'package:learn_tamil/views/Home/HomeScreen.dart';
-import 'package:learn_tamil/views/Module/Module.dart';
+import 'package:learn_tamil/views/Module/ModulePage.dart';
 
 class SigninPage extends StatefulWidget {
   const SigninPage({ Key? key }) : super(key: key);
@@ -111,10 +113,7 @@ class _SigninPageState extends State<SigninPage> {
                 SigninPageButton(
                   text: "Sign in", 
                   function: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                      builder: (BuildContext context) => HomeScreen()
-                    )
-                    );
+                    Navigator.push(context, ScaleRoute(page: HomeScreen()));
                   }
                 ),
                 SizedBox(height: screenHeight*(1/25),),
@@ -134,10 +133,7 @@ class _SigninPageState extends State<SigninPage> {
                   alignment: Alignment.centerRight,
                   child: GestureDetector(
                     onTap: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                      builder: (BuildContext context) => SignupPage()
-                    )
-                    );
+                    Navigator.push(context, SlideRightRoute(page: SignupPage()));
                   },
                     child: Text(
                       "Sign up",

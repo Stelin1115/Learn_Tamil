@@ -3,9 +3,15 @@
 import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:learn_tamil/Components/Widgets/PageTransition/EnterExitRoutePage.dart';
+import 'package:learn_tamil/Components/Widgets/PageTransition/FadeRoutePage.dart';
+import 'package:learn_tamil/Components/Widgets/PageTransition/RotationRoutePage.dart';
+import 'package:learn_tamil/Components/Widgets/PageTransition/ScaleRotateRoutePage.dart';
+import 'package:learn_tamil/Components/Widgets/PageTransition/SizeRoutePage.dart';
+import 'package:learn_tamil/Components/Widgets/PageTransition/SlideRightRoutePage.dart';
 import 'package:learn_tamil/Components/buttons/VocabularyButton.dart';
 import 'package:learn_tamil/Components/constrants.dart';
-import 'package:learn_tamil/views/Module/Module.dart';
+import 'package:learn_tamil/views/Module/ModulePage.dart';
 import 'package:learn_tamil/views/Vocabulary/Animals/Animals.dart';
 import 'package:learn_tamil/views/Vocabulary/Bodyparts/Bodyparts.dart';
 import 'package:learn_tamil/views/Vocabulary/Food/Food.dart';
@@ -127,8 +133,8 @@ class _VocabularyPageState extends State<VocabularyPage> {
                                   press: () {
                                     Navigator.push(
                                       context,
-                                      MaterialPageRoute(
-                                        builder: (context) => FoodPage(),
+                                      FadeRoute(
+                                        page: FoodPage(),
                                       ),
                                     );
                                   },
@@ -137,11 +143,10 @@ class _VocabularyPageState extends State<VocabularyPage> {
                                   text: 'Animals',
                                   press: () {
                                     Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => AnimalsPage(),
-                                      ),
-                                    );
+                                        context,
+                                        EnterExitRoute(
+                                            exitPage: VocabularyPage(),
+                                            enterPage: AnimalsPage()));
                                   },
                                   image: 'assets/images/animals.png')
                             ],
@@ -154,8 +159,8 @@ class _VocabularyPageState extends State<VocabularyPage> {
                                   press: () {
                                     Navigator.push(
                                       context,
-                                      MaterialPageRoute(
-                                        builder: (context) => ShapesPage(),
+                                      RotationRoute(
+                                        page: ShapesPage(),
                                       ),
                                     );
                                   },
@@ -165,8 +170,8 @@ class _VocabularyPageState extends State<VocabularyPage> {
                                   press: () {
                                     Navigator.push(
                                       context,
-                                      MaterialPageRoute(
-                                        builder: (context) => NumbersPage(),
+                                      ScaleRotateRoute(
+                                        page: NumbersPage(),
                                       ),
                                     );
                                   },
@@ -181,8 +186,8 @@ class _VocabularyPageState extends State<VocabularyPage> {
                                   press: () {
                                     Navigator.push(
                                       context,
-                                      MaterialPageRoute(
-                                        builder: (context) => WorkersPage(),
+                                      SizeRoute(
+                                        page: WorkersPage(),
                                       ),
                                     );
                                   },
@@ -192,8 +197,8 @@ class _VocabularyPageState extends State<VocabularyPage> {
                                   press: () {
                                     Navigator.push(
                                       context,
-                                      MaterialPageRoute(
-                                        builder: (context) => BodypartsPage(),
+                                      SlideRightRoute(
+                                        page: BodypartsPage(),
                                       ),
                                     );
                                   },

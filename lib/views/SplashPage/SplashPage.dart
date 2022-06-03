@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:learn_tamil/Auth/Signin/Signin.dart';
 import 'package:learn_tamil/Auth/Signup/Signup.dart';
+import 'package:learn_tamil/Components/Widgets/PageTransition/FadeRoutePage.dart';
 import 'package:learn_tamil/Components/constrants.dart';
 
 class SplashPage extends StatefulWidget {
@@ -15,8 +16,7 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     super.initState();
     Timer(Duration(seconds: 3),
-    () => Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => SigninPage()))
+    () => Navigator.push(context, FadeRoute(page: SigninPage()))
     );
   }
 

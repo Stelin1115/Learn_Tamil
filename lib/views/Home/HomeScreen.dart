@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:learn_tamil/Components/constrants.dart';
 import 'package:learn_tamil/views/Account/AccountPage.dart';
 import 'package:learn_tamil/views/Home/HomePage.dart';
-import 'package:learn_tamil/views/Module/Module.dart';
+import 'package:learn_tamil/views/Module/ModulePage.dart';
 import 'package:learn_tamil/views/Setting/SettingPage.dart';
 import 'package:flutter/cupertino.dart';
 

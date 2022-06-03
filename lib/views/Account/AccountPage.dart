@@ -6,6 +6,7 @@ import 'package:learn_tamil/Auth/Signin/Signin.dart';
 import 'package:learn_tamil/Components/Charts/BarChart/BarChart.dart';
 import 'package:learn_tamil/Components/Charts/BarChart/LearnersChart.dart';
 import 'package:learn_tamil/Components/Charts/BarChart/learnedSeries.dart';
+import 'package:learn_tamil/Components/Widgets/PageTransition/ScaleRoutePage.dart';
 import 'package:learn_tamil/Components/constrants.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:learn_tamil/views/Setting/SettingPage.dart';
@@ -86,16 +87,15 @@ class _AccountPageState extends State<AccountPage> {
               fontFamily: 'Poppins',
               fontWeight: FontWeight.w400),
         ),
-        // leading: GestureDetector(
-        //   onTap: () {
-        //     Navigator.of(context).pop();
-        //   },
-        //   child: Icon(
-        //     Icons.arrow_back,
-        //     size: 30,
-        //     color: kPrimaryWhiteColor,
-        //   ),
-        // ),
+        leading: GestureDetector(
+          onTap: () {   
+          },
+          child: Icon(
+            Icons.arrow_back,
+            size: 30,
+            color: kPrimaryWhiteColor,
+          ),
+        ),
         backgroundColor: kPrimaryRedColor,
         elevation: 0,
       ),
@@ -113,7 +113,7 @@ class _AccountPageState extends State<AccountPage> {
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: Column(
                   children: [
-                    SizedBox(height: screenHeight * 1 / 35),
+                    SizedBox(height: 10),
                     Stack(
                       overflow: Overflow.clip,
                       children: [
@@ -213,9 +213,9 @@ class _AccountPageState extends State<AccountPage> {
                                 ),
                               ],
                             ),
-                            LearnersChart(
-                              data: data,
-                            ),
+                            // LearnersChart(
+                            //   data: data,
+                            // ),
                             SizedBox(
                               height: 40,
                             ),
@@ -265,8 +265,8 @@ class _AccountPageState extends State<AccountPage> {
                             // SizedBox(height: 20,),
                             GestureDetector(
                               onTap: () {
-                                Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (BuildContext context) => SigninPage()));
-                              },
+                                Navigator.push(context, ScaleRoute(page: SigninPage()));
+                                                            },
                               child: Row(
                                 children: [
                                   SizedBox(width:15),

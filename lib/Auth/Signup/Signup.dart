@@ -1,11 +1,13 @@
 // ignore_for_file: prefer_const_constructors, curly_braces_in_flow_control_structures
 
 import 'package:flutter/material.dart';
+import 'package:learn_tamil/Components/Widgets/PageTransition/ScaleRoutePage.dart';
+import 'package:learn_tamil/Components/Widgets/PageTransition/SlideRightRoutePage.dart';
 import 'package:learn_tamil/Components/buttons/SigninPageButton.dart';
 import 'package:learn_tamil/Components/constrants.dart';
 import 'package:learn_tamil/Auth/Signin/Signin.dart';
 import 'package:learn_tamil/views/Home/HomeScreen.dart';
-import 'package:learn_tamil/views/Module/Module.dart';
+import 'package:learn_tamil/views/Module/ModulePage.dart';
 
 class SignupPage extends StatefulWidget {
   const SignupPage({ Key? key }) : super(key: key);
@@ -97,10 +99,7 @@ class _SignupPageState extends State<SignupPage> {
                 SigninPageButton(
                   text: "Sign up", 
                   function: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                      builder: (BuildContext context) => HomeScreen()
-                    )
-                    );
+                    Navigator.push(context, ScaleRoute(page: HomeScreen()));
                   }
                 ),
                 SizedBox(height: screenHeight*(1/25),),
@@ -120,10 +119,7 @@ class _SignupPageState extends State<SignupPage> {
                   alignment: Alignment.topRight,
                   child: GestureDetector(
                     onTap: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                      builder: (BuildContext context) => SigninPage()
-                    )
-                    );
+                   Navigator.push(context, SlideRightRoute(page: SigninPage()));
                   },
                     child: Text(
                       "Sign in",
