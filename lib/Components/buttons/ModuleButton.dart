@@ -19,12 +19,14 @@ class ModuleButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var screenHeight = MediaQuery.of(context).size.height;
+    var screenWidth = MediaQuery.of(context).size.width;
     return Container(
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
         child: SizedBox(
-          height: 150,
-          width: 150,
+          height: screenHeight * 1/5,
+          width: screenWidth * 1/2.5,
           child: ElevatedButton(
             onPressed: press,
             style: ButtonStyle(

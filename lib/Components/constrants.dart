@@ -6,6 +6,7 @@ const primaryColor = Colors.black;
 const kPrimaryWhiteColor = Colors.white;
 const kPrimaryGreyColor = Colors.grey;
 const kPrimaryTransparent = Colors.transparent;
+const kPrimaryColor2 = Color.fromARGB(155, 0, 0, 0);
 const kPrimaryPinkColor = Color.fromARGB(255, 248, 232, 238);
 const kPrimaryRedColor = Color.fromARGB(255, 179, 0, 62);
 const kPrimaryPurpleColor = Color.fromARGB(255, 63, 61, 86);

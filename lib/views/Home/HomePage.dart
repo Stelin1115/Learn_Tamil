@@ -82,9 +82,9 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                         ),
-                        SizedBox(height: screenHeight * (1 / 60)),
+                        SizedBox(height: 10),
                         _search(),
-                        SizedBox(height: 30),
+                        SizedBox(height: 20),
                         Stack(
                           overflow: Overflow.visible,
                           children: [
@@ -267,7 +267,7 @@ class _HomePageState extends State<HomePage> {
                                 ))
                           ],
                         ),
-                        SizedBox(height: 30),
+                        SizedBox(height: 20),
                         Stack(
                           overflow: Overflow.visible,
                           children: [
@@ -358,7 +358,7 @@ class _HomePageState extends State<HomePage> {
                                 ))
                           ],
                         ),
-                        SizedBox(height: 30),
+                        SizedBox(height: 20),
                         Stack(
                           overflow: Overflow.visible,
                           children: [
@@ -366,7 +366,7 @@ class _HomePageState extends State<HomePage> {
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 30),
                               child: Container(
-                                height: 99,
+                                height: 129,
                                 width: screenWidth,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20),
@@ -379,7 +379,7 @@ class _HomePageState extends State<HomePage> {
                                           MainAxisAlignment.spaceEvenly,
                                       children: [
                                         SizedBox(
-                                          height: 40,
+                                          height: 20,
                                           child: Align(
                                             alignment: Alignment.center,
                                             child: Text(
@@ -396,7 +396,7 @@ class _HomePageState extends State<HomePage> {
                                           padding: const EdgeInsets.symmetric(
                                               vertical: 4),
                                           child: SizedBox(
-                                            height: 30,
+                                            height: 70,
                                             child: ListView.builder(
                                                 itemCount:
                                                     unfinishedmodule.length,
@@ -409,14 +409,17 @@ class _HomePageState extends State<HomePage> {
                                                           MainAxisAlignment
                                                               .spaceBetween,
                                                       children: [
-                                                        Text(
-                                                          unfinishedmodule[
-                                                                  index][
-                                                              "unfinishedmodule"],
-                                                          style: TextStyle(
-                                                              fontFamily:
-                                                                  'Poppins',
-                                                              fontSize: 14),
+                                                        Align(
+                                                          alignment:Alignment.centerLeft,
+                                                          child: Text(
+                                                            unfinishedmodule[
+                                                                    index][
+                                                                "unfinishedmodule"],
+                                                            style: TextStyle(
+                                                                fontFamily:
+                                                                    'Poppins',
+                                                                fontSize: 14),
+                                                          ),
                                                         ),
                                                         GestureDetector(
                                                           child: Text(
@@ -442,7 +445,7 @@ class _HomePageState extends State<HomePage> {
                                                 }),
                                           ),
                                         ),
-                                        SizedBox(height: 10)
+                                        SizedBox(height: 0)
                                       ]),
                                 ),
                               ),
