@@ -4,7 +4,8 @@ const projectName = 'Learn_Tamil';
 
 const primaryColor = Colors.black;
 const kPrimaryWhiteColor = Colors.white;
-const kPrimaryGreyColor = Colors.grey;
+const kPrimaryGreyColor = Color.fromARGB(255, 112, 112, 112);
+const kPrimaryGrey2Color = Color.fromARGB(100, 0, 0, 0);
 const kPrimaryTransparent = Colors.transparent;
 const kPrimaryColor2 = Color.fromARGB(155, 0, 0, 0);
 const kPrimaryPinkColor = Color.fromARGB(255, 248, 232, 238);

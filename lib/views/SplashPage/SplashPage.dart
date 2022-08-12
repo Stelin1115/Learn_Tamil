@@ -27,8 +27,7 @@ class _SplashPageState extends State<SplashPage> {
     return Scaffold(
       backgroundColor: kPrimaryPinkColor,
       body: Stack(
-        overflow: Overflow.visible,
-        children: [
+        clipBehavior: Clip.none, children: [
           Container(
             child: Center(
                 child: Column(

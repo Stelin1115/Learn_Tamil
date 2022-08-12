@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learn_tamil/Auth/ResetPassword/ResetPassword.dart';
+import 'package:learn_tamil/Auth/ResetPassword/ResetPasswordEmail.dart';
 import 'package:learn_tamil/Auth/Signin/Signin.dart';
 import 'package:learn_tamil/Auth/Signup/Signup.dart';
 import 'package:learn_tamil/views/Account/AccountPage.dart';
@@ -45,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SplashPage(),
+      body: SigninPage(),
     );
   }
 }

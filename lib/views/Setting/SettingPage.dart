@@ -47,7 +47,6 @@ class _SettingPageState extends State<SettingPage> {
         child: Stack(children: [
           Image(image: AssetImage('assets/images/intersection.png')),
           Image(image: AssetImage('assets/images/group-40.png')),
-          
           SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
@@ -61,7 +60,7 @@ class _SettingPageState extends State<SettingPage> {
                 //       fontSize: 20,
                 //       fontWeight: FontWeight.w400),
                 // ),
-                
+
                 SizedBox(
                   height: 10,
                 ),
@@ -71,10 +70,11 @@ class _SettingPageState extends State<SettingPage> {
                       borderRadius: BorderRadius.circular(25)),
                   width: screenWidth,
                   height: screenHeight * 18 / 10,
-                  child: Column(children: []),
+                  child: Column(children: [TextField()]),
                 ),
-                 SizedBox(
-                  height: 15,)
+                SizedBox(
+                  height: 15,
+                )
               ]),
             ),
           )

@@ -1,5 +1,8 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:learn_tamil/Auth/ResetPassword/ResetPasswordEmail.dart';
+import 'package:learn_tamil/Components/Responsive/Responsive.dart';
 import 'package:learn_tamil/Components/buttons/SigninPageButton.dart';
 import 'package:learn_tamil/Components/constrants.dart';
 
@@ -14,14 +17,7 @@ class ResetPasswordPage extends StatelessWidget {
       backgroundColor: kPrimaryPinkColor,
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
-          'Reset password',
-          style: TextStyle(
-              color: primaryColor,
-              fontSize: 20,
-              fontFamily: 'Poppins',
-              fontWeight: FontWeight.w400),
-        ),
+        title: resetpassword(),
         leading: GestureDetector(
           onTap: () {
             Navigator.of(context).pop();
@@ -41,48 +37,94 @@ class ResetPasswordPage extends StatelessWidget {
           return false;
         },
         child: SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: Column(
-          children: [
-            SizedBox(height: screenHeight * 1/25),
-              Text(
-                'Enter the email associated with your account. We will send instructions to reset your password.',
-                style: TextStyle(
-                  color: primaryColor,
-                  fontSize: 16,
-                  fontFamily: 'Poppins'
-                ),
-              ),
-              SizedBox(height: screenHeight* 1/20),
+            child: Responsive(mobile: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30),
+          child: Column(
+            children: [
+              SizedBox(height: screenHeight * 1 / 25),
+              description(),
+              SizedBox(height: screenHeight * 1 / 20),
               _resetemail(),
               SizedBox(height: 20),
-              SigninPageButton(
-                  text: "Send instruction", 
-                  function: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
-                      builder: (BuildContext context) => ResetPasswordEmailPage()
-                    )
-                    );
-                  }
-                ),
-              
-          ],
+              sendinstruction(context),
+            ],
+          ),
         ),
-            )),
+        tabletlandscape: Container(
+          height: screenHeight,
+          width: screenWidth,
+          decoration: BoxDecoration(color: kPrimaryGrey2Color),
+          child: Center(
+            child: Container(
+              width: 550,
+              height: 380,
+              decoration: BoxDecoration(color: kPrimaryPinkColor,
+              borderRadius: BorderRadius.circular(20)),
+              child: Column(children: [
+                SizedBox(height: 100,
+                  child: Center(child: resetpassword())),
+                  SizedBox(height: 100,
+                  child: Center(child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 50),
+                    child: description(),
+                  ))),
+                  SizedBox(height: 35),
+                  
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 100),
+                    child: Column(
+                      children: [
+                        _resetemail(),
+                        SizedBox(height: 20,),
+                        sendinstruction(context),
+                      ],
+                    ),
+                  )
+              ]),
+            ),
+          ),
+        ),
+        )
+        ),
       ),
     );
+  }
+
+  SigninPageButton sendinstruction(BuildContext context) {
+    return SigninPageButton(
+                text: "Send instruction",
+                function: () {
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (BuildContext context) =>
+                          ResetPasswordEmailPage()));
+                });
+  }
+
+  Text description() {
+    return Text(
+              'Enter the email associated with your account. We will send instructions to reset your password.',
+              style: TextStyle(
+                  color: primaryColor, fontSize: 16, fontFamily: 'Poppins'),
+            );
+  }
+
+  Text resetpassword() {
+    return Text(
+        'Reset password',
+        style: TextStyle(
+            color: primaryColor,
+            fontSize: 20,
+            fontFamily: 'Poppins',
+            fontWeight: FontWeight.w400),
+      );
   }
 
   _resetemail() {
     return Container(
       height: 40,
       child: TextFormField(
-        style: TextStyle(
-          fontFamily: 'Poppins',
-          fontSize: 16, 
-          color: primaryColor
-        ),
+        style:
+            TextStyle(fontFamily: 'Poppins', fontSize: 16, color: primaryColor),
         cursorColor: primaryColor,
         keyboardType: TextInputType.text,
         textInputAction: TextInputAction.done,

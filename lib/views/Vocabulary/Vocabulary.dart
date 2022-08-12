@@ -3,6 +3,7 @@
 import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:learn_tamil/Components/Responsive/Responsive.dart';
 import 'package:learn_tamil/Components/Widgets/PageTransition/EnterExitRoutePage.dart';
 import 'package:learn_tamil/Components/Widgets/PageTransition/FadeRoutePage.dart';
 import 'package:learn_tamil/Components/Widgets/PageTransition/RotationRoutePage.dart';
@@ -10,6 +11,7 @@ import 'package:learn_tamil/Components/Widgets/PageTransition/ScaleRotateRoutePa
 import 'package:learn_tamil/Components/Widgets/PageTransition/SizeRoutePage.dart';
 import 'package:learn_tamil/Components/Widgets/PageTransition/SlideRightRoutePage.dart';
 import 'package:learn_tamil/Components/buttons/VocabularyButton.dart';
+import 'package:learn_tamil/Components/buttons/VocabularyButtonTablet.dart';
 import 'package:learn_tamil/Components/constrants.dart';
 import 'package:learn_tamil/views/Module/ModulePage.dart';
 import 'package:learn_tamil/views/Vocabulary/Animals/Animals.dart';
@@ -59,162 +61,288 @@ class _VocabularyPageState extends State<VocabularyPage> {
         elevation: 0,
       ),
       body: NotificationListener<OverscrollIndicatorNotification>(
-        onNotification: (OverscrollIndicatorNotification overscroll) {
-          overscroll.disallowGlow();
-          return false;
-        },
-        child: Stack(
-          children: <Widget>[
-            Container(
-                child:
-                    Image(image: AssetImage("assets/images/intersection.png"))),
-            Container(
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/images/group-40.png'))),
-            ),
-            SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 30),
-                child: Column(
-                  children: [
-                    SizedBox(
-                      width: screenWidth,
-                      height: screenHeight,
+          onNotification: (OverscrollIndicatorNotification overscroll) {
+            overscroll.disallowGlow();
+            return false;
+          },
+          child: Responsive(
+              mobile: Stack(
+                children: <Widget>[
+                  Container(
+                      child: Image(
+                          image: AssetImage("assets/images/intersection.png"))),
+                  Container(
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage('assets/images/group-40.png'))),
+                  ),
+                  SingleChildScrollView(
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 30),
                       child: Column(
-                        children: <Widget>[
-                          SizedBox(height: screenHeight * (1 / 30)),
-                          Row(
-                            children: [
-                              Text(
-                                "level 01",
-                                style: TextStyle(
-                                    fontFamily: 'Poppins',
-                                    fontSize: 20,
-                                    color: kPrimaryWhiteColor,
-                                    fontWeight: FontWeight.w500),
-                              ),
-                              Text(' - ',
-                                  style: TextStyle(
-                                      fontFamily: 'Poppins',
-                                      fontSize: 20,
-                                      color: kPrimaryWhiteColor,
-                                      fontWeight: FontWeight.w500)),
-                              Text("40% complete",
-                                  style: TextStyle(
-                                      fontFamily: 'Poppins',
-                                      fontSize: 20,
-                                      color: kPrimaryWhiteColor,
-                                      fontWeight: FontWeight.w500))
-                            ],
-                          ),
-                          SizedBox(height: screenHeight * (1 / 80)),
-                          Align(
-                            alignment: Alignment.centerLeft,
-                            child: GestureDetector(
-                              onTap: () {},
-                              child: Text(
-                                'View all levels',
-                                style: TextStyle(
-                                  color: kPrimaryWhiteColor,
-                                  fontSize: 16,
-                                  fontFamily: 'Poppins',
-                                  decoration: TextDecoration.underline,
+                        children: [
+                          SizedBox(
+                            width: screenWidth,
+                            height: screenHeight,
+                            child: Column(
+                              children: <Widget>[
+                                SizedBox(height: screenHeight * (1 / 30)),
+                                Row(
+                                  children: [
+                                    Text(
+                                      "level 01",
+                                      style: TextStyle(
+                                          fontFamily: 'Poppins',
+                                          fontSize: 20,
+                                          color: kPrimaryWhiteColor,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                    Text(' - ',
+                                        style: TextStyle(
+                                            fontFamily: 'Poppins',
+                                            fontSize: 20,
+                                            color: kPrimaryWhiteColor,
+                                            fontWeight: FontWeight.w500)),
+                                    Text("40% complete",
+                                        style: TextStyle(
+                                            fontFamily: 'Poppins',
+                                            fontSize: 20,
+                                            color: kPrimaryWhiteColor,
+                                            fontWeight: FontWeight.w500))
+                                  ],
                                 ),
-                              ),
+                                SizedBox(height: screenHeight * (1 / 80)),
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: GestureDetector(
+                                    onTap: () {},
+                                    child: Text(
+                                      'View all levels',
+                                      style: TextStyle(
+                                        color: kPrimaryWhiteColor,
+                                        fontSize: 16,
+                                        fontFamily: 'Poppins',
+                                        decoration: TextDecoration.underline,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: screenHeight * (1 / 20)),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: <Widget>[
+                                    VocabularyButton(
+                                        text: 'Food',
+                                        press: () {
+                                          Navigator.push(
+                                            context,
+                                            FadeRoute(
+                                              page: FoodPage(),
+                                            ),
+                                          );
+                                        },
+                                        image: 'assets/images/food.png'),
+                                    VocabularyButton(
+                                        text: 'Animals',
+                                        press: () {
+                                          Navigator.push(
+                                              context,
+                                              EnterExitRoute(
+                                                  exitPage: VocabularyPage(),
+                                                  enterPage: AnimalsPage()));
+                                        },
+                                        image: 'assets/images/animals.png')
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: <Widget>[
+                                    VocabularyButton(
+                                        text: 'Shapes',
+                                        press: () {
+                                          Navigator.push(
+                                            context,
+                                            RotationRoute(
+                                              page: ShapesPage(),
+                                            ),
+                                          );
+                                        },
+                                        image: 'assets/images/shapes.png'),
+                                    VocabularyButton(
+                                        text: 'Numbers',
+                                        press: () {
+                                          Navigator.push(
+                                            context,
+                                            ScaleRotateRoute(
+                                              page: NumbersPage(),
+                                            ),
+                                          );
+                                        },
+                                        image: 'assets/images/numbers.png')
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: <Widget>[
+                                    VocabularyButton(
+                                        text: 'Workers',
+                                        press: () {
+                                          Navigator.push(
+                                            context,
+                                            SizeRoute(
+                                              page: WorkersPage(),
+                                            ),
+                                          );
+                                        },
+                                        image: 'assets/images/workers.png'),
+                                    VocabularyButton(
+                                        text: 'Bodyparts',
+                                        press: () {
+                                          Navigator.push(
+                                            context,
+                                            SlideRightRoute(
+                                              page: BodypartsPage(),
+                                            ),
+                                          );
+                                        },
+                                        image: 'assets/images/bodyparts.png')
+                                  ],
+                                )
+                              ],
                             ),
                           ),
-                          SizedBox(height: screenHeight * (1 / 20)),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: <Widget>[
-                              VocabularyButton(
-                                  text: 'Food',
-                                  press: () {
-                                    Navigator.push(
-                                      context,
-                                      FadeRoute(
-                                        page: FoodPage(),
-                                      ),
-                                    );
-                                  },
-                                  image: 'assets/images/food.png'),
-                              VocabularyButton(
-                                  text: 'Animals',
-                                  press: () {
-                                    Navigator.push(
-                                        context,
-                                        EnterExitRoute(
-                                            exitPage: VocabularyPage(),
-                                            enterPage: AnimalsPage()));
-                                  },
-                                  image: 'assets/images/animals.png')
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: <Widget>[
-                              VocabularyButton(
-                                  text: 'Shapes',
-                                  press: () {
-                                    Navigator.push(
-                                      context,
-                                      RotationRoute(
-                                        page: ShapesPage(),
-                                      ),
-                                    );
-                                  },
-                                  image: 'assets/images/shapes.png'),
-                              VocabularyButton(
-                                  text: 'Numbers',
-                                  press: () {
-                                    Navigator.push(
-                                      context,
-                                      ScaleRotateRoute(
-                                        page: NumbersPage(),
-                                      ),
-                                    );
-                                  },
-                                  image: 'assets/images/numbers.png')
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: <Widget>[
-                              VocabularyButton(
-                                  text: 'Workers',
-                                  press: () {
-                                    Navigator.push(
-                                      context,
-                                      SizeRoute(
-                                        page: WorkersPage(),
-                                      ),
-                                    );
-                                  },
-                                  image: 'assets/images/workers.png'),
-                              VocabularyButton(
-                                  text: 'Bodyparts',
-                                  press: () {
-                                    Navigator.push(
-                                      context,
-                                      SlideRightRoute(
-                                        page: BodypartsPage(),
-                                      ),
-                                    );
-                                  },
-                                  image: 'assets/images/bodyparts.png')
-                            ],
-                          )
                         ],
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ),
-          ],
-        ),
-      ),
+              tabletlandscape: Row(
+                children: [
+                  Container(
+                    width: screenWidth * 1 / 3,
+                    decoration: BoxDecoration(color: kPrimaryRedColor),
+                    child: Column(children: [
+                      Align(
+                          alignment: Alignment.centerLeft,
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 20),
+                            child: Icon(
+                              Icons.arrow_back,
+                              color: kPrimaryWhiteColor,
+                              size: 30,
+                            ),
+                          )),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 30),
+                        child: Column(children: [
+                          Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                            'Vocabulary',
+                            style: TextStyle(
+                              color: kPrimaryWhiteColor,
+                              fontSize: 30,
+                              fontFamily: 'Poppins',
+                              // fontWeight: FontWeight.w500
+                            ),
+                                                  ),
+                          ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            VocabularyButtonTablet(
+                                text: 'Food',
+                                press: () {
+                                  Navigator.push(
+                                    context,
+                                    FadeRoute(
+                                      page: FoodPage(),
+                                    ),
+                                  );
+                                },
+                                image: 'assets/images/food.png'),
+                            VocabularyButtonTablet(
+                                text: 'Animals',
+                                press: () {
+                                  Navigator.push(
+                                      context,
+                                      EnterExitRoute(
+                                          exitPage: VocabularyPage(),
+                                          enterPage: AnimalsPage()));
+                                },
+                                image: 'assets/images/animals.png')
+                          ],
+                        ),
+                        Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: <Widget>[
+                                    VocabularyButtonTablet(
+                                        text: 'Shapes',
+                                        press: () {
+                                          Navigator.push(
+                                            context,
+                                            RotationRoute(
+                                              page: ShapesPage(),
+                                            ),
+                                          );
+                                        },
+                                        image: 'assets/images/shapes.png'),
+                                    VocabularyButtonTablet(
+                                        text: 'Numbers',
+                                        press: () {
+                                          Navigator.push(
+                                            context,
+                                            ScaleRotateRoute(
+                                              page: NumbersPage(),
+                                            ),
+                                          );
+                                        },
+                                        image: 'assets/images/numbers.png')
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: <Widget>[
+                                    VocabularyButtonTablet(
+                                        text: 'Workers',
+                                        press: () {
+                                          Navigator.push(
+                                            context,
+                                            SizeRoute(
+                                              page: WorkersPage(),
+                                            ),
+                                          );
+                                        },
+                                        image: 'assets/images/workers.png'),
+                                    VocabularyButtonTablet(
+                                        text: 'Bodyparts',
+                                        press: () {
+                                          Navigator.push(
+                                            context,
+                                            SlideRightRoute(
+                                              page: BodypartsPage(),
+                                            ),
+                                          );
+                                        },
+                                        image: 'assets/images/bodyparts.png')
+                                  ],
+                                )
+                        ],),
+                      )
+                      
+                    ]),
+                  )
+                ],
+              ))),
     );
   }
 
